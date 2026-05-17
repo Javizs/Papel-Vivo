@@ -1,0 +1,45 @@
+# Dependencies
+node_modules/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Build output
+dist/
+dist-electron/
+release/
+out/
+build/
+deploy/*.zip
+
+# Packaged apps and archives
+*.exe
+*.msi
+*.dmg
+*.AppImage
+*.zip
+
+# Logs and caches
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.cache/
+.vite/
+coverage/
+
+# Editor and OS files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Private reading material
+books/
+test-books/
+private-books/
+samples/private/
+*.pdf
+*.epub
