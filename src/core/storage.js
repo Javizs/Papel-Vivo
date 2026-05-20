@@ -7,9 +7,11 @@ const storage = isElectron ? electronStorage : webStorage;
 export const {
   deleteBookLocal,
   loadAppState,
+  loadBookNotes,
   loadBooksLocal,
   loadReadingProgress,
   saveAppState,
+  saveBookNotes,
   saveBookLocal,
   saveReadingProgress
 } = storage;

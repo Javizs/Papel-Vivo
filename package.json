@@ -8,23 +8,87 @@
   "scripts": {
     "dev": "vite --host 127.0.0.1",
     "dev:web": "vite --host 127.0.0.1",
+    "dev:desktop": "vite --host 127.0.0.1 --mode desktop",
+    "desktop:dev": "concurrently -k \"npm run dev:desktop\" \"wait-on http://127.0.0.1:5173 && electron .\"",
+    "desktop:build": "npm run build:desktop",
+    "desktop:dist": "npm run build:desktop && electron-builder --win",
+    "icon:win": "powershell -ExecutionPolicy Bypass -File scripts/create-windows-icon.ps1",
+    "icon:android": "powershell -ExecutionPolicy Bypass -File scripts/create-android-icons.ps1",
     "electron": "electron .",
-    "start:electron": "concurrently -k \"npm run dev\" \"wait-on http://127.0.0.1:5173 && electron .\"",
+    "start:electron": "npm run desktop:dev",
     "start": "concurrently -k \"npm run dev\" \"wait-on http://127.0.0.1:5173 && electron .\"",
     "build": "vite build",
     "build:web": "vite build",
+    "build:desktop": "vite build --mode desktop",
+    "build:android": "vite build --mode android",
+    "android:add": "npx cap add android",
+    "android:sync": "npm run build:android && npm run icon:android && npx cap sync android",
+    "android:open": "npm run android:sync && npx cap open android",
+    "android:debug": "npm run android:sync && cd android && gradlew.bat assembleDebug",
+    "android:release": "npm run android:sync && cd android && gradlew.bat assembleRelease",
     "preview": "vite preview --host 127.0.0.1"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "^5.0.0",
-    "concurrently": "^9.2.1",
-    "electron": "^38.0.0",
+    "@capacitor/android": "^8.3.4",
+    "@capacitor/core": "^8.3.4",
     "lucide-react": "^0.468.0",
     "pdfjs-dist": "^5.7.284",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "typescript": "^5.6.3",
-    "vite": "^7.0.0",
-    "wait-on": "^8.0.0"
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.3.4",
+    "@vitejs/plugin-react": "^6.0.2",
+    "concurrently": "^9.2.1",
+    "electron": "^38.8.6",
+    "electron-builder": "^26.8.1",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.13",
+    "wait-on": "^9.0.10"
+  },
+  "build": {
+    "appId": "com.papelvivo.app",
+    "productName": "Papel Vivo",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "package.json"
+    ],
+    "asar": true,
+    "win": {
+      "icon": "build/icon.ico",
+      "signAndEditExecutable": false,
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Papel Vivo",
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "artifactName": "${productName}-Setup-${version}-${arch}.${ext}"
+    },
+    "portable": {
+      "artifactName": "${productName}-Portable-${version}-${arch}.${ext}"
+    }
   }
 }

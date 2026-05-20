@@ -25,6 +25,11 @@ export function textToBlocks(text, fallbackText = "") {
   }));
 }
 
+function createStableBookId(file) {
+  const normalizedName = file.name.toLowerCase().trim().replace(/\s+/g, "-");
+  return `local-${normalizedName}-${file.size}-${file.lastModified || 0}`;
+}
+
 export async function parseBookFile(file, { pdfWorkerSrc } = {}) {
   if (!SUPPORTED_EXTENSIONS.test(file.name)) {
     throw new Error("Formato no soportado. Usa archivos .txt, .md o .pdf.");
@@ -36,10 +41,15 @@ export async function parseBookFile(file, { pdfWorkerSrc } = {}) {
   const blocks = isPdf ? parsedPdf.blocks : textToBlocks(text);
 
   return {
-    id: `${Date.now()}-${file.name}`,
+    id: createStableBookId(file),
     title: parsedPdf?.title ?? file.name.replace(SUPPORTED_EXTENSIONS, ""),
     author: isPdf ? "PDF local" : "Archivo local",
     type: parsedPdf?.type ?? (file.name.toLowerCase().endsWith(".md") ? "md" : "txt"),
+    sourceFile: {
+      name: file.name,
+      size: file.size,
+      lastModified: file.lastModified || null
+    },
     toc: parsedPdf?.toc ?? [],
     originalPageCount: parsedPdf?.originalPageCount,
     parsedAt: parsedPdf?.parsedAt,

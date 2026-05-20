@@ -95,7 +95,7 @@ export async function parsePdfToReadableBook(file, { workerSrc } = {}) {
   }
 
   if (import.meta.env?.DEV) {
-    console.debug("[AppReader] PDF reflow metrics", metrics);
+    console.debug("[Papel Vivo] PDF reflow metrics", metrics);
   }
 
   // TODO: para PDFs grandes conviene migrar los bloques parseados de localStorage a IndexedDB.
@@ -289,7 +289,7 @@ export function classifyPdfLines(lines) {
     const emphasis = kind === "paragraph" && isEmphasisParagraphLine(line, stats, headingScore);
 
     if (import.meta.env?.DEV && lineHasBold(line) && (headingScore >= 2 || emphasis || kind === "heading")) {
-      console.debug("[AppReader] PDF bold line", {
+      console.debug("[Papel Vivo] PDF bold line", {
         text: text.slice(0, 140),
         fontSize: line.fontSize,
         fontName: line.fontName,
