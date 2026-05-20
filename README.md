@@ -4,13 +4,43 @@ Papel Vivo es una app React + Vite local-first para leer documentos PDF, TXT y M
 
 El proyecto incluye version web con landing, version de escritorio para Windows con Electron, instalador Windows, version portable Windows y version Android con Capacitor. La version web esta pensada para publicarse como sitio estatico y las versiones descargables se distribuiran desde GitHub Releases.
 
+## Descargar Papel Vivo
+
+Si solo quieres usar la app, descarga uno de los archivos siguientes. El boton verde "Code" de GitHub descarga el codigo fuente, no la aplicacion lista para usar.
+
+### Windows - Instalador recomendado
+
+[Descargar instalador para Windows](https://github.com/Javizs/Papel-Vivo/releases/latest/download/PapelVivo-0.1.0-Windows-Setup-x64.exe)
+
+Recomendado para la mayoria de usuarios de Windows. Instala Papel Vivo como una aplicacion normal.
+
+### Windows - Version portable
+
+[Descargar version portable](https://github.com/Javizs/Papel-Vivo/releases/latest/download/PapelVivo-0.1.0-Windows-Portable-x64.exe)
+
+No requiere instalacion. Descarga, ejecuta y usa la app directamente.
+
+### Android - APK
+
+[Descargar APK para Android](https://github.com/Javizs/Papel-Vivo/releases/latest/download/PapelVivo-0.1.0-Android.apk)
+
+Instalable manualmente fuera de Google Play. Android puede pedir permitir instalacion desde fuentes externas.
+
+[Ver todas las versiones](https://github.com/Javizs/Papel-Vivo/releases/latest)
+
+Avisos breves:
+
+- Windows puede mostrar SmartScreen porque el instalador aun no esta firmado digitalmente.
+- Android puede pedir permiso para instalar aplicaciones desde fuentes externas porque la APK no viene de Google Play.
+- Los documentos se procesan localmente y no se suben a servidores.
+
 ## Enlaces
 
 - Demo web en Hostinger: pendiente de publicar.
-- GitHub Releases: disponible en la seccion Releases cuando se publique la primera beta.
-- Instalador Windows: disponible en la seccion Releases cuando se publique la primera beta.
-- Windows Portable: disponible en la seccion Releases cuando se publique la primera beta.
-- APK Android: disponible en la seccion Releases cuando se publique la primera beta.
+- GitHub Releases: [ver ultima release](https://github.com/Javizs/Papel-Vivo/releases/latest).
+- Instalador Windows: disponible desde la seccion de descargas anterior.
+- Windows Portable: disponible desde la seccion de descargas anterior.
+- APK Android: disponible desde la seccion de descargas anterior.
 
 ## Capturas
 

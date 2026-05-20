@@ -41,6 +41,7 @@ const BRAND_NAME = "Papel Vivo";
 const BRAND_SLUG = "papel-vivo";
 const BRAND_ICON_SRC = "/brand/papel-vivo-icon.png";
 const GITHUB_REPO_URL = "https://github.com/Javizs/Papel-Vivo";
+const GITHUB_RELEASES_URL = "https://github.com/Javizs/Papel-Vivo/releases/latest";
 const APP_TARGET = getAppTarget();
 
 const CURRENT_MANUAL_TEXT = `Papel Vivo
@@ -591,12 +592,15 @@ function LandingPage({ isExiting, onEnter }) {
             <a className="landing-secondary" href="#como-funciona" onClick={(event) => scrollToSection(event, "como-funciona")}>
               Ver cómo funciona
             </a>
+            <a className="landing-secondary landing-download-link" href={GITHUB_RELEASES_URL} target="_blank" rel="noreferrer">
+              Descargar app
+            </a>
             <a className="landing-secondary landing-github-link" href={GITHUB_REPO_URL} target="_blank" rel="noreferrer">
               <Github size={19} />
-              Repositorio y descargas
+              Ver codigo en GitHub
             </a>
           </div>
-          <p className="landing-trust-note">Los archivos se procesan en tu navegador. Consulta el codigo fuente y, cuando esten listas, las versiones descargables para escritorio y Android desde el repositorio del proyecto.</p>
+          <p className="landing-trust-note">Los archivos se procesan en tu navegador. Descarga la app lista para usar desde Releases o consulta el codigo fuente en GitHub.</p>
         </div>
 
         <div className="landing-preview" aria-hidden="true">
