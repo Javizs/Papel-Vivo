@@ -10,23 +10,21 @@ Si solo quieres usar la app, descarga uno de los archivos siguientes. El boton v
 
 ### Windows - Instalador recomendado
 
-[Descargar instalador para Windows]([https://github.com/Javizs/Papel-Vivo/releases/latest/download/PapelVivo-0.1.0-Windows-Setup-x64.exe](https://github.com/Javizs/Papel-Vivo/releases/tag/v0.1.0-beta))
+[Descargar instalador para Windows](https://github.com/Javizs/Papel-Vivo/releases/tag/v0.1.0-beta)
 
-Recomendado para la mayoria de usuarios de Windows. Instala Papel Vivo como una aplicacion normal.
+Recomendado para la mayoría de usuarios de Windows. Instala Papel Vivo como una aplicación normal.
 
-### Windows - Version portable
+### Windows - Versión portable
 
-[Descargar version portable]([https://github.com/Javizs/Papel-Vivo/releases/latest/download/PapelVivo-0.1.0-Windows-Portable-x64.exe](https://github.com/Javizs/Papel-Vivo/releases/tag/v0.1.0-beta))
+[Descargar versión portable](https://github.com/Javizs/Papel-Vivo/releases/tag/v0.1.0-beta)
 
-No requiere instalacion. Descarga, ejecuta y usa la app directamente.
+No requiere instalación. Descarga, ejecuta y usa la app directamente.
 
 ### Android - APK
 
-[Descargar APK para Android]([https://github.com/Javizs/Papel-Vivo/releases/latest/download/PapelVivo-0.1.0-Android.apk](https://github.com/Javizs/Papel-Vivo/releases/tag/v0.1.0-beta))
+[Descargar APK para Android](https://github.com/Javizs/Papel-Vivo/releases/tag/v0.1.0-beta)
 
-Instalable manualmente fuera de Google Play. Android puede pedir permitir instalacion desde fuentes externas.
-
-[Ver todas las versiones]([https://github.com/Javizs/Papel-Vivo/releases/latest](https://github.com/Javizs/Papel-Vivo/releases/tag/v0.1.0-beta))
+Instalable manualmente fuera de Google Play. Android puede pedir permitir instalación desde fuentes externas.
 
 Avisos breves:
 
